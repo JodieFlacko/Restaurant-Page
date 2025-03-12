@@ -1,3 +1,15 @@
 body{
-  background-color: purple;
+  background-image: url(./background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+nav{
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 22px;
 }
