@@ -61,7 +61,7 @@ body{
   background-repeat: no-repeat;
   background-size: 100vw auto;
   background-attachment: fixed;
-  background-position: center;
+  background-position: top center;
   font-family:"airbnbcereal_w_bkregular", Arial, Helvetica, sans-serif;
 }
 
@@ -96,6 +96,15 @@ nav button:hover{
   justify-content: center;
   align-items: center;
   gap: 22px;
-  text-wrap: balance;
   color: white;
+}
+
+#quote{
+  position: relative;
+}
+
+#cit {
+  position: absolute;
+  top: 28px;
+  right: 12px;
 }
