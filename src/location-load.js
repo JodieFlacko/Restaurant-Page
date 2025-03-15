@@ -1,6 +1,4 @@
-export function locationLoad(){
-  const content = document.querySelector("#content");
-
+export function locationLoad(content){
   const container = document.createElement("div");
   content.appendChild(container);
 

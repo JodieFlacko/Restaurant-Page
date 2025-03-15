@@ -1,5 +1,7 @@
-export function pageLoad(){
-  const content = document.querySelector("#content");
+export function pageLoad(content){
+
+  const container = document.createElement("div");
+  container.classList.add("home-container");
 
   const descPar = document.createElement("p");
   const quotePar = document.createElement("p");
@@ -13,8 +15,9 @@ export function pageLoad(){
   quotePar.setAttribute("id", "quote")
   citSpan.setAttribute("id", "cit");
 
-  content.appendChild(descPar);
-  content.appendChild(quotePar);
+  content.appendChild(container);
+  container.appendChild(descPar);
+  container.appendChild(quotePar);
   quotePar.appendChild(citSpan);
 }
 

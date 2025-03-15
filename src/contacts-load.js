@@ -1,5 +1,4 @@
-export function contactsLoad(){
-  const content = document.querySelector("#content");
+export function contactsLoad(content){
   const section = document.createElement("section");
   content.appendChild(section);
 

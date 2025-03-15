@@ -1,4 +1,4 @@
-export function fillMenu(){
+export function fillMenu(content){
   const menu = [
     {
       name: "MARGHERITA",
@@ -57,7 +57,6 @@ export function fillMenu(){
   ]
 
   const menuList = document.createElement("ul");
-  const content = document.querySelector("#content");
   content.appendChild(menuList);
   for (let pizza of menu){
     const li = document.createElement("li");

@@ -17,7 +17,7 @@
     max-width: 100%;
   }
   
-  input, button, textarea, select, p, span, nav {
+  input, button, textarea, select, p, span, nav, div {
     font: inherit;
   }
   
@@ -54,19 +54,60 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Italic.woff2') format('woff2'),
+      url('../fonts/PlayfairDisplay-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+      url('../fonts/PlayfairDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+      url('../fonts/PlayfairDisplay-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Page style */
+:root{
+  --header-bg-color: rgb(11, 9, 10, 0.9);
+  --red: #941B0C;
+}
+
 
 body{
+  margin: 0;
+  padding: 0;
   background-image: url(../background.jpg);
   background-repeat: no-repeat;
-  background-size: 100vw auto;
+  background-size: 100vw 150vh;
   background-attachment: fixed;
   background-position: top center;
   font-family:"airbnbcereal_w_bkregular", Arial, Helvetica, sans-serif;
 }
 
+header{
+  background-color: var(--header-bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 42px;
+}
+
 nav{
-  padding: 32px 26px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -75,20 +116,86 @@ nav{
 }
 
 nav button{
+  position: relative;
   letter-spacing: 1px;
   background-color: transparent;
   color: snow;
   border: transparent;
   cursor: pointer;
-  transition: .2s all ease-in-out;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+
 }
 
-nav button:hover{
+nav button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Border thickness */
+  background-color: grey; /* Border color (warm green) */
+  transform: scaleX(0); /* Initially hide the border */
+  transition: all 0.3s ease; /* Smooth transition for the border */
+}
+
+nav button span{
+  display: inline-block;
+  width: 100%;
+  height: 120%;
+  transition: all 0.3s ease; /* Smooth transition for the border */
+  display: flex;
+  align-items: center;
+}
+
+nav button span:hover{
   color: darkred;
+  transform: translateY(-8px);
 }
 
-#content{
-  width: 650px;
+nav button:hover::after {
+  transform: scaleX(1); /* Reveal the border */
+}
+
+h1{
+  color: snow;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 250%;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+h1 span{
+  display: inline-block;
+  transition: .3s all ease;
+}
+
+h1::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: -10px;
+  width: 110%;
+  height: 3px;
+  background-color: grey;
+  transform: scaleX(0);
+  transition: .3s all ease;
+}
+
+h1:hover::after{
+  transform: scaleX(1);
+}
+
+h1 span:hover{
+  color: var(--red);
+  transform: translateY(-4px);
+}
+
+.home-container{
+  width: 65vw;
   margin: 0 auto;
   margin-top: 150px;
   display: flex;
@@ -97,10 +204,29 @@ nav button:hover{
   align-items: center;
   gap: 22px;
   color: white;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  line-height: 40px;
+}
+
+
+#desc{
+  font-size: 150%;
+  word-spacing: 5px;
+  text-align: center;
 }
 
 #quote{
   position: relative;
+  font-style: italic;
+  font-size: 120%;
+  transition: .3s all ease;
+}
+
+#quote:hover{
+  scale: 1.05;
+  font-size: 125%;
+  color: var(--red);
+  text-shadow: 0 0 10prgb(19, 24, 15)14, 0 0 15px #141a0f;
 }
 
 #cit {
