@@ -21,7 +21,7 @@ export function contactsLoad(){
       link: "Location",
       desc: "Directions to get here",
     },
-  ]
+  ];
   
   for (let item of contactItems){
     const itemDiv = document.createElement("div");
@@ -38,5 +38,5 @@ export function contactsLoad(){
     itemDiv.appendChild(desc);
 
     content.appendChild(itemDiv);
-  }
+  };
 }
