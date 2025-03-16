@@ -11,9 +11,7 @@ pageLoad(content);
   const nav = document.querySelector("nav");
   nav.onclick = (e) => {
     if(!e.target.parentNode.dataset.attribute) return;
-
-    content.textContent = "";
-    
+        
     const functions = {
       home: pageLoad,
       menu: fillMenu,

@@ -202,7 +202,7 @@ h1 span:hover{
   transform: translateY(-4px);
 }
 
-.home-container{
+.home{
   width: 65vw;
   display: flex;
   flex-direction: column;
@@ -275,3 +275,4 @@ h1 span:hover{
   text-decoration: none;
   margin-right: 10px;
 }
+

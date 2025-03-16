@@ -1,4 +1,9 @@
 export function fillMenu(content){
+  if(content.classList.value === "menu") return;
+  
+  content.textContent = "";
+  content.classList.value = "menu";
+
   const menu = [
     {
       name: "MARGHERITA",
@@ -55,7 +60,6 @@ export function fillMenu(content){
     },
     
   ]
-
   const menuList = document.createElement("ul");
   content.appendChild(menuList);
   for (let pizza of menu){

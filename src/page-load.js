@@ -1,7 +1,10 @@
 export function pageLoad(content){
+  if(content.classList.value === "home") return;
+  
+  content.textContent = "";
+  content.classList.value = "home";
 
   const container = document.createElement("div");
-  container.classList.add("home-container");
 
   const descPar = document.createElement("p");
   const quotePar = document.createElement("p");

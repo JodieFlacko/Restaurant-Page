@@ -1,4 +1,9 @@
 export function locationLoad(content){
+  if(content.classList.value === "location") return;
+  
+  content.textContent = "";
+  content.classList.value = "location";
+
   const container = document.createElement("div");
   content.appendChild(container);
 

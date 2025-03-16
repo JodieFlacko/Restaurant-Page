@@ -1,4 +1,9 @@
 export function contactsLoad(content){
+    if(content.classList.value === "contacts") return;
+  
+    content.textContent = "";
+    content.classList.value = "contacts";
+  
   const section = document.createElement("section");
   content.appendChild(section);
 
