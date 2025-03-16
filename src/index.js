@@ -24,6 +24,5 @@ pageLoad(content);
     for (let key in functions){
       if (key === e.target.parentNode.dataset.attribute) functions[key](content);
     }
-
   }
 })()
