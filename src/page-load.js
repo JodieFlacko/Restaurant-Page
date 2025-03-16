@@ -1,9 +1,6 @@
 export function pageLoad(content){
-  if(content.classList.value === "home") return;
+  if(content.classList.value !== "home") content.classList.value = "home";
   
-  content.textContent = "";
-  content.classList.value = "home";
-
   const container = document.createElement("div");
 
   const descPar = document.createElement("p");

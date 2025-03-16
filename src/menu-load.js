@@ -1,9 +1,6 @@
 export function fillMenu(content){
-  if(content.classList.value === "menu") return;
+  if(content.classList.value !== "menu") content.classList.value = "menu";
   
-  content.textContent = "";
-  content.classList.value = "menu";
-
   const menu = [
     {
       name: "MARGHERITA",
