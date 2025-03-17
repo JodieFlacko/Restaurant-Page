@@ -85,6 +85,7 @@
 :root{
   --header-bg-color: rgb(11, 9, 10, 0.99);
   --red: #941B0C;
+  --link-color: rgb(197, 195, 195);
 }
 
 body{
@@ -276,10 +277,9 @@ h1 span:hover{
   margin-right: 10px;
 }
 
-#content.menu{
+#content{
   color: snow;
-  margin: 0 auto;
-  width: 70vw;
+  width: 100%;
 }
 #content.menu ul{
   display: flex;
@@ -314,5 +314,39 @@ h1 span:hover{
   opacity: 0.2;
 }
 
+#content.location .container, #content.contacts .container{
+  width: 40vw;
+  height: 450px;
+  background-color: var(--header-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  padding: 0 120px;
+}
 
+#content.location a{
+  transition: .3s all ease;
+}
 
+#content.location a, #content.location a:link, #content.location a:visited{
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+#content.location a:hover{
+  color: var(--red);
+}
+
+#content.location img{
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin-right: 12px;
+  filter: invert(17%) sepia(75%) saturate(2211%) hue-rotate(352deg) brightness(94%) contrast(100%);
+}
+
+#content.location .container div{
+  display: flex;
+  align-items: center;
+}

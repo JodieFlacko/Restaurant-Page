@@ -1,8 +1,9 @@
 export function contactsLoad(content){
     if(content.classList.value !== "contacts") content.classList.value = "contacts";
   
-  const section = document.createElement("section");
-  content.appendChild(section);
+  const container = document.createElement("div");
+  container.classList.add("container")
+  content.appendChild(container);
 
   const contactItems = [
     {
@@ -38,6 +39,6 @@ export function contactsLoad(content){
     itemDiv.appendChild(link);
     itemDiv.appendChild(desc);
 
-    content.appendChild(itemDiv);
+    container.appendChild(itemDiv);
   };
 }
