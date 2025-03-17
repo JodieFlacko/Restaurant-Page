@@ -59,20 +59,32 @@ export function fillMenu(content){
   ]
   const menuList = document.createElement("ul");
   content.appendChild(menuList);
-  for (let pizza of menu){
+  for (let item of menu){
     const li = document.createElement("li");
     menuList.appendChild(li);
 
+    const pizza = document.createElement("div");
+    pizza.classList.add("pizza")
+    li.appendChild(pizza);
+
+    const pizzaDiv = document.createElement("div");
+    pizzaDiv.classList.add("pizza-info");
+    pizza.appendChild(pizzaDiv);
+
     const name = document.createElement("span");
-    name.textContent = pizza.name;
-    li.appendChild(name);
+    name.textContent = item.name;
+    pizzaDiv.appendChild(name);
 
     const desc = document.createElement("p");
-    desc.textContent = pizza.desc;
-    li.appendChild(desc);
+    desc.textContent = item.desc;
+    pizzaDiv.appendChild(desc);    
 
     const price = document.createElement("div");
-    price.textContent = pizza.price;
-    li.appendChild(price);
+    price.textContent = item.price;
+    price.classList.add("price");
+    pizza.appendChild(price);
+  
+    const hr = document.createElement("hr")
+    li.appendChild(hr);
   }
 }

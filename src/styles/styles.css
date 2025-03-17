@@ -276,3 +276,43 @@ h1 span:hover{
   margin-right: 10px;
 }
 
+#content.menu{
+  color: snow;
+  margin: 0 auto;
+  width: 70vw;
+}
+#content.menu ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  height: min(800px, 95%);
+  padding: 0 50px;
+  background-color: var(--header-bg-color);
+}
+
+#content.menu .pizza {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  font-size: 95%;
+}
+
+#content.menu li span, .price{
+  font-weight: 600;
+}
+
+#content.menu li div.pizza-info{
+  flex: 1 1 0;
+  display: inline-block;
+}
+
+#content.menu hr{
+  margin-top: 15px;
+  opacity: 0.2;
+}
+
+
+
