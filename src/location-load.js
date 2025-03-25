@@ -22,14 +22,26 @@ export function locationLoad(content){
   container.appendChild(descPar);
 }
 
-function loadImage(container, img, text, href){
+function loadImage(container, src, text, href){
+  const attributes = {
+    href,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  }
+
   const imgDiv = document.createElement("div"); 
   const imgIcon = document.createElement("img");
-  imgIcon.setAttribute("src", img);
-  const imgButton = document.createElement("a");
-  imgButton.setAttribute("href", href);
-  imgButton.textContent = location;
+  imgIcon.setAttribute("src", src);
+  const imgLink = document.createElement("a");
+  setAttributes(attributes, imgLink);
+  imgLink.textContent = text;
   imgDiv.appendChild(imgIcon);
-  imgDiv.appendChild(imgButton);
+  imgDiv.appendChild(imgLink);
   container.appendChild(imgDiv);
+}
+
+function setAttributes(attributes, element){
+  for(let property in attributes){
+    element.setAttribute(property, attributes[property]);
+  }
 }
