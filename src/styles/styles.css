@@ -86,6 +86,7 @@
   --header-bg-color: rgb(11, 9, 10, 0.99);
   --red: #941B0C;
   --link-color: rgb(197, 195, 195);
+  --grey: rgb(53, 53, 53, 1);
 }
 
 body{
@@ -285,7 +286,6 @@ h1 span:hover{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
   list-style: none;
   height: min(800px, 95%);
   padding: 0 50px;
@@ -296,8 +296,14 @@ h1 span:hover{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
   font-size: 95%;
+  gap: 50px;
+  padding: 12px 12px;
+  transition: .2s all ease;
+}
+
+.menu .pizza:hover {
+  background-color: var(--grey);
 }
 
 #content.menu li span, .price{
@@ -310,7 +316,6 @@ h1 span:hover{
 }
 
 #content.menu hr{
-  margin-top: 15px;
   opacity: 0.2;
 }
 
