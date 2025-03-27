@@ -273,11 +273,6 @@ h1 span:hover{
   cursor: pointer;
 }
 
-.footer-item a{
-  text-decoration: none;
-  margin-right: 10px;
-}
-
 #content{
   color: snow;
   width: 100%;
@@ -323,24 +318,33 @@ h1 span:hover{
   width: 40vw;
   height: 450px;
   background-color: var(--header-bg-color);
+  padding: 0 120px;
+}
+
+#content.location .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 32px;
-  padding: 0 120px;
 }
 
-#content.location a{
+a{
   transition: .3s all ease;
+  width: fit-content;
 }
 
-#content.location a, #content.location a:link, #content.location a:visited{
+a,  a:link,  a:visited{
   text-decoration: underline;
   color: var(--link-color);
 }
 
-#content.location a:hover{
+a:hover{
   color: var(--red);
+}
+
+.footer-item a{
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 #content.location img{
@@ -354,4 +358,25 @@ h1 span:hover{
 #content.location .container div{
   display: flex;
   align-items: center;
+}
+
+#content.contacts .container{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 70px 120px;
+  gap: 20px;
+}
+
+#content.contacts .container div{
+  flex: 1;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 12px;
+}
+
+#content.contacts .container p{
+  grid-column: 1 / -1;
+  font-size: 90%;
 }
