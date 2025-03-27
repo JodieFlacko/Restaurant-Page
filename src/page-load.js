@@ -3,21 +3,22 @@ export function pageLoad(content){
   
   const container = document.createElement("div");
 
-  const descPar = document.createElement("p");
+  const firstDescPar = document.createElement("p");
+  const secondDescPar = document.createElement("p");
   const quotePar = document.createElement("p");
-  const citSpan = document.createElement("span");
+  const br = document.createElement("br");
   
-  descPar.textContent = "A Napoli, il mare racconta storie di eterna bellezza, ma è a tavola che quelle storie diventano poesia. Tra il profumo della pizza appena sfornata e il sapore della tradizione, ogni boccone è un viaggio nel cuore della città."
-  quotePar.textContent = "“A pizza è come ‘o mare: te entra dint’ ‘e vene e nun te lassi cchiù!”"
-  citSpan.textContent = "-Totò";
+  firstDescPar.textContent = "Fare le pizze è come amare qualcuno. Deve venire facile."
+  secondDescPar.textContent = "Quando si inizia a faticare vuol dire che c’è qualcosa che non va."
+  quotePar.textContent = "“Ti offro una pizza... i soldi ce li hai?”"
 
-  descPar.setAttribute("id", "desc");
-  quotePar.setAttribute("id", "quote")
-  citSpan.setAttribute("id", "cit");
+  firstDescPar.setAttribute("id", "desc");
+  secondDescPar.setAttribute("id", "desc");
+  quotePar.setAttribute("id", "quote");
 
   content.appendChild(container);
-  container.appendChild(descPar);
+  container.appendChild(firstDescPar);
+  container.appendChild(secondDescPar);
   container.appendChild(quotePar);
-  quotePar.appendChild(citSpan);
 }
 
