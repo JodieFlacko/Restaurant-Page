@@ -269,7 +269,6 @@ h1 span:hover{
 }
 
 .footer-item img{
-  display: inline-block;
   cursor: pointer;
 }
 
@@ -347,7 +346,7 @@ a:hover{
   margin-right: 10px;
 }
 
-#content.location img{
+div img{
   width: 24px;
   height: 24px;
   display: inline-block;
@@ -367,13 +366,17 @@ a:hover{
   gap: 20px;
 }
 
-#content.contacts .container div{
+#content.contacts .container > div{
   flex: 1;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   column-gap: 12px;
+}
+#content.contacts .container > div div{
+  display: flex;
+  align-items: center;
 }
 
 #content.contacts .container p{

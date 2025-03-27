@@ -1,3 +1,4 @@
+import { createIconDiv } from ".";
 import mapMarkerIcon from "./images/map-marker.svg"
 import phoneMarkerIcon from "./images/phone.svg"
 
@@ -29,37 +30,4 @@ export function locationLoad(content){
   const descPar = document.createElement("p");
   descPar.innerHTML = desc;
   container.appendChild(descPar);
-}
-
-export function createIconDiv(src, text, href){
-  const iconDiv = document.createElement("div"); 
-  const imgIcon = document.createElement("img");
-  const imgLink = createLink(href, text);
-  imgIcon.setAttribute("src", src);
-  iconDiv.appendChild(imgIcon);
-  iconDiv.appendChild(imgLink);
-  return iconDiv;
-}
-
-export function setLinkAttributes(href, element){
-  const attributes = {
-    href,
-    target: "_blank",
-    rel: "noopener noreferrer",
-  };
-  const pattern = /^https:\/\/www.google.com\/maps/;
-  if(pattern.test(href)){
-    for(let property in attributes){
-      element.setAttribute(property, attributes[property]);
-    };
-    return;  
-  }
-  element.setAttribute("href", href);
-}
-
-export function createLink(href, text){
-  const link = document.createElement("a");
-  setLinkAttributes(href, link);
-  link.textContent = text;
-  return link;
 }
