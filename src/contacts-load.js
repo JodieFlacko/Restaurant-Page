@@ -1,3 +1,5 @@
+import { setLinkAttributes } from "./location-load";
+
 export function contactsLoad(content){
     if(content.classList.value !== "contacts") content.classList.value = "contacts";
   
@@ -37,8 +39,7 @@ export function contactsLoad(content){
 
     title.textContent = item.title;
     link.textContent = item.link;
-    if(item.link === "Location") setLinkAttributes(item.href, link);
-    else link.setAttribute("href", item.href);
+    setLinkAttributes(item.href, link);
     desc.textContent = item.desc;
 
     itemDiv.appendChild(strong)
@@ -47,17 +48,5 @@ export function contactsLoad(content){
     itemDiv.appendChild(desc);
 
     container.appendChild(itemDiv);
-  };
-}
-
-function setLinkAttributes(href, element){
-  const attributes = {
-    href,
-    target: "_blank",
-    rel: "noopener noreferrer",
-  };
-
-  for(let property in attributes){
-    element.setAttribute(property, attributes[property]);
   };
 }

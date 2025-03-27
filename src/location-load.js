@@ -23,25 +23,29 @@ export function locationLoad(content){
 }
 
 function loadImage(container, src, text, href){
-  const attributes = {
-    href,
-    target: "_blank",
-    rel: "noopener noreferrer",
-  }
-
   const imgDiv = document.createElement("div"); 
   const imgIcon = document.createElement("img");
   imgIcon.setAttribute("src", src);
   const imgLink = document.createElement("a");
-  setAttributes(attributes, imgLink);
+  setLinkAttributes(href, imgLink);
   imgLink.textContent = text;
   imgDiv.appendChild(imgIcon);
   imgDiv.appendChild(imgLink);
   container.appendChild(imgDiv);
 }
 
-function setAttributes(attributes, element){
-  for(let property in attributes){
-    element.setAttribute(property, attributes[property]);
+export function setLinkAttributes(href, element){
+  const attributes = {
+    href,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  };
+  const pattern = /^https:\/\/www.google.com\/maps/;
+  if(pattern.test(href)){
+    for(let property in attributes){
+      element.setAttribute(property, attributes[property]);
+    };
+    return;  
   }
+  element.setAttribute("href", href);
 }
