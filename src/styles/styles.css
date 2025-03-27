@@ -269,7 +269,13 @@ h1 span:hover{
 }
 
 .footer-item img{
+  display: inline-block;
   cursor: pointer;
+  transition: .3s all ease;
+}
+
+.footer-item img:hover{
+  filter: invert(17%) sepia(75%) saturate(2211%) hue-rotate(352deg) brightness(94%) contrast(100%);
 }
 
 #content{
@@ -346,7 +352,7 @@ a:hover{
   margin-right: 10px;
 }
 
-div img{
+.container img{
   width: 24px;
   height: 24px;
   display: inline-block;
